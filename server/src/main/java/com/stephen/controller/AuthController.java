@@ -1,7 +1,7 @@
 package com.stephen.controller;
 
-import com.stephen.dto.LoginDTO;
-import com.stephen.dto.RegisterDTO;
+import com.stephen.dto.auth.LoginDTO;
+import com.stephen.dto.auth.RegisterDTO;
 import com.stephen.service.AuthService;
 import com.stephen.utils.JwtUtil;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping("/auth")
+@RequestMapping("/api/auth")
 public class AuthController {
     @Autowired
     private AuthenticationManager authManager;

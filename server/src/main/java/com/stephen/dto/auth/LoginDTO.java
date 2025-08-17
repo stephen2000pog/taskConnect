@@ -1,4 +1,4 @@
-package com.stephen.dto;
+package com.stephen.dto.auth;
 
 
 import lombok.Getter;
