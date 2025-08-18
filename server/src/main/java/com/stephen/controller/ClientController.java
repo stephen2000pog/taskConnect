@@ -31,7 +31,6 @@ public class ClientController {
                 .orElse(ResponseEntity.notFound().build());
     }
 
-
     @PostMapping
     public ResponseEntity<ClientDTO> createClient(@RequestBody ClientDTO dto) {
         ClientDTO created = clientService.createClient(dto);

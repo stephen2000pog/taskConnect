@@ -36,7 +36,7 @@ public class AuthService {
         return jwtUtil.generateToken((UserDetails) auth.getPrincipal());
     }
 
-    public String register(String email, String password, String role) {
+    public String register(String email, String password, Role role) {
         if (userRepository.findByEmail(email).isPresent()) {
             throw new RuntimeException("Email already in use");
         }
@@ -45,7 +45,7 @@ public class AuthService {
         user.setEmail(email);
         user.setPasswordHash(passwordEncoder.encode(password));
         try {
-            user.setRole(Role.valueOf(role.toUpperCase()));
+            user.setRole(role);
         } catch (IllegalArgumentException e) {
             throw new RuntimeException("Invalid role: " + role);
         }
