@@ -2,7 +2,9 @@ package com.stephen.mapper;
 
 import com.stephen.dto.AdminDTO;
 import com.stephen.model.Admin;
+import org.springframework.stereotype.Component;
 
+@Component
 public class AdminMapper {
     public Admin toEntity(AdminDTO dto) {
         Admin admin = new Admin();

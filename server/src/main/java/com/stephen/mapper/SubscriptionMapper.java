@@ -3,7 +3,9 @@ package com.stephen.mapper;
 import com.stephen.dto.SubscriptionDTO;
 import com.stephen.model.Subscription;
 import com.stephen.repository.FreelanceRepository;
+import org.springframework.stereotype.Component;
 
+@Component
 public class SubscriptionMapper {
 
     private final FreelanceRepository freelanceRepository;

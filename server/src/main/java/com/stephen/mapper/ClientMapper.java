@@ -2,7 +2,9 @@ package com.stephen.mapper;
 
 import com.stephen.dto.ClientDTO;
 import com.stephen.model.Client;
+import org.springframework.stereotype.Component;
 
+@Component
 public class ClientMapper {
     public Client toEntity(ClientDTO dto) {
         Client client = new Client();

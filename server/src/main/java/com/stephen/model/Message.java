@@ -19,6 +19,10 @@ public class Message {
     private Long id;
 
     @ManyToOne
+    @JoinColumn(name = "client_id")
+    private Client client;
+    
+    @ManyToOne
     private User sender;
 
     @ManyToOne

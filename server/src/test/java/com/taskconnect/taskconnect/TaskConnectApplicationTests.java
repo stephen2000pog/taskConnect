@@ -1,6 +1,6 @@
 package com.taskconnect.taskconnect;
 
-import com.stephen.taskconnect.TaskConnectApplication;
+import com.stephen.TaskConnectApplication;
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 

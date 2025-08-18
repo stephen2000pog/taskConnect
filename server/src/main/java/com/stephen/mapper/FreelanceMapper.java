@@ -2,7 +2,9 @@ package com.stephen.mapper;
 
 import com.stephen.dto.FreelanceDTO;
 import com.stephen.model.Freelance;
+import org.springframework.stereotype.Component;
 
+@Component
 public class FreelanceMapper {
     public Freelance toEntity(FreelanceDTO dto) {
         Freelance freelance = new Freelance();

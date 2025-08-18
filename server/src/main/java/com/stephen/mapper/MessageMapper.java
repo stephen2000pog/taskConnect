@@ -3,7 +3,9 @@ package com.stephen.mapper;
 import com.stephen.dto.MessageDTO;
 import com.stephen.model.Message;
 import com.stephen.repository.UserRepository;
+import org.springframework.stereotype.Component;
 
+@Component
 public class MessageMapper {
 
     private final UserRepository userRepository;
