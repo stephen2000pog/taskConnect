@@ -17,7 +17,6 @@ import java.util.List;
 
 @Service
 public class AuthService {
-
     @Autowired
     private AuthenticationManager authManager;
 
