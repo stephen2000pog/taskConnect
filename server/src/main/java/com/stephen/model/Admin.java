@@ -13,7 +13,6 @@ import java.util.List;
 @Entity
 @Table(name = "admins")
 public class Admin extends User {
-
     @ElementCollection
     private List<String> permissions; // Exemple : ["MANAGE_USERS", "MODERATE_MESSAGES"]
 }

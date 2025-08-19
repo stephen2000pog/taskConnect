@@ -1,8 +1,11 @@
 package com.stephen.controller;
 
+import com.stephen.dto.auth.AuthResponse;
 import com.stephen.dto.auth.LoginDTO;
 import com.stephen.dto.auth.RegisterDTO;
+import com.stephen.mapper.UserMapper;
 import com.stephen.service.AuthService;
+import com.stephen.utils.JwtUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -16,16 +19,20 @@ public class AuthController {
     @Autowired
     private AuthService authService;
 
+    @Autowired
+    private JwtUtil jwtUtils;
+
+    @Autowired
+    private UserMapper userMapper;
+
     @PostMapping("/login")
-    public ResponseEntity<String> login(@RequestBody LoginDTO request) {
-        String token = authService.authenticate(request.getEmail(), request.getPassword());
-        return ResponseEntity.ok(token);
+    public ResponseEntity<AuthResponse> login(@RequestBody LoginDTO request) {
+        return ResponseEntity.ok(authService.login(request.getEmail(), request.getPassword()));
     }
 
     @PostMapping("/register")
-    public ResponseEntity<String> register(@RequestBody RegisterDTO request) {
-        String token = authService.register(request.getEmail(), request.getPassword(), request.getRole());
-        return ResponseEntity.ok(token);
+    public ResponseEntity<AuthResponse> register(@RequestBody RegisterDTO request) {
+        return ResponseEntity.ok(authService.register(request.getEmail(), request.getPassword(), request.getRole()));
     }
 
 }

@@ -21,7 +21,11 @@ public class Message {
     @ManyToOne
     @JoinColumn(name = "client_id")
     private Client client;
-    
+
+    @ManyToOne
+    @JoinColumn(name = "freelance_id")
+    private Freelance freelance;
+
     @ManyToOne
     private User sender;
 

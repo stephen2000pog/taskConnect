@@ -1,6 +1,5 @@
 package com.stephen.model;
 
-import com.stephen.model.enums.Plan;
 import com.stephen.model.enums.SubscriptionType;
 import jakarta.persistence.*;
 import lombok.Getter;
@@ -14,7 +13,6 @@ import java.util.List;
 @Entity
 @Table(name = "freelances")
 public class Freelance extends User {
-
     private String profileTitle;
 
     @Column(length = 2000)
@@ -22,21 +20,19 @@ public class Freelance extends User {
 
     @ElementCollection
     private List<String> serviceCategories;
-    private String serviceArea;
+    private List<String> serviceAreas;
     private String priceInfo;
-
-    @Enumerated(EnumType.STRING)
-    private Plan Plan;
 
     @Enumerated(EnumType.STRING)
     private SubscriptionType subscriptionType;
 
     private LocalDate subscriptionEndDate;
 
-    private Integer messageLimitRemaining = 3; // par client/mois
+    @OneToMany(mappedBy = "freelance", cascade = CascadeType.ALL)
+    private List<Message> messages;
+    private Integer messageLimitRemaining = 3;
 
     @OneToMany(mappedBy = "freelance", cascade = CascadeType.ALL)
     private List<Review> reviews;
-
 }
 

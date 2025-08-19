@@ -12,9 +12,8 @@ import java.util.List;
 @Getter
 @Setter
 @Entity
-@Table(name = "clients") //what
+@Table(name = "clients")
 public class Client extends User {
-
     private String location;
 
     @OneToMany(mappedBy = "client", cascade = CascadeType.ALL)
